@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+//debug
+.b1 {
+  border: solid 5px red;
+}
+.b2 {
+  border: solid 2px blue;
+  margin: 2px;
+}
+.b3 {
+  border: solid 1px green;
+}
+//first
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background: none;
+  color: inherit;
+}
+.text-Light {
+  color: #f1f8fc;
+}
+.bt_color {
+  color: #f1f8fc;
+  background-color: #0074c7;
+}
+.text_titre {
+  color: #00497c;
+  background-color: #f1f8fc;
+}

@@ -1,0 +1,38 @@
+.box_note {
+  display: flex;
+  padding: 0;
+  background-color: black;
+  width: 114px;
+  height: 25px;
+  position: relative;
+  z-index: 0;
+}
+
+.note {
+  background-color: orange;
+  height: 25px;
+}
+
+.nonote {
+  background-color: whitesmoke;
+  margin-right: 0;
+  height: 25px;
+  flex-grow: 1;
+}
+
+.box_star {
+  justify-content: center;
+  align-items: center;
+  display: inline;
+  width: 114px; /* Largeur de .box_note */
+  height: 28px; /* Hauteur de .box_note */
+  position: absolute;
+  top: -1px; /* Position verticale */
+  left: 0; /* Position horizontale */
+  z-index: 5;
+}
+
+.etoile {
+  height: 20px;
+  display: inline-block;
+}

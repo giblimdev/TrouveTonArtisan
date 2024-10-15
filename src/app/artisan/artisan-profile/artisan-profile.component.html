@@ -1,0 +1,98 @@
+<div class="m-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 d-flex justify-content-center align-items-center">
+        <div class="my-10 container">
+          <div class="card m-auto p-2" *ngIf="artisan$ | async as artisan">
+            <div class="card-header">{{ artisan.name }}</div>
+            <div class="card-body">
+              <div class="bnote">
+                <div class="row">
+                  <div class="col-8">
+                    <div class="box_note">
+                      <div class="note"></div>
+                      <div class="nonote"></div>
+                      <div class="box_star">
+                        <img class="etoile" src="A0.png" />
+                        <img class="etoile" src="A0.png" />
+                        <img class="etoile" src="A0.png" />
+                        <img class="etoile" src="A0.png" />
+                        <img class="etoile" src="A0.png" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2">{{ artisan.note }}</div>
+                </div>
+              </div>
+              <pre class="card-text">Spécialité : {{ artisan.category }}</pre>
+              <pre class="card-text">Localisation : {{ artisan.location }}</pre>
+            </div>
+            <div class="mb-3">
+              {{ artisan.about }}
+            </div>
+            <pre>Site web : {{ artisan.web }}</pre>
+            <div>{{ artisan.email }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="/ col-md-5 p-6">
+        <div class="b1 container p-3 bg-form text-Light">
+          <div>
+            <h3>Formulaire de contacter</h3>
+            <p>envoyer un e-mail à l’artisan.</p>
+          </div>
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Nom</label>
+              <input
+                type="text"
+                formControlName="name"
+                class="form-control"
+                id="name"
+                placeholder="Votre nom"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                formControlName="email"
+                class="form-control"
+                id="email"
+                placeholder="Votre   
+ email"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="objet" class="form-label">Objet</label>
+              <input
+                type="text"
+                formControlName="objet"
+                class="form-control"
+                id="objet"
+                placeholder="Objet"
+              />
+            </div>
+             
+
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea
+                formControlName="message"
+                class="form-control"
+                id="message"
+                rows="3"
+                placeholder="Votre message"
+              ></textarea>
+            </div>
+
+            <pre>{{ form.value | json }}</pre>
+
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary" routerLink="">Retour à l'accueil</button>
+  </div>
+</div>

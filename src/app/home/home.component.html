@@ -1,0 +1,73 @@
+<div class="m-5 p-5">
+  <h2 class="text_titre">« Comment trouver mon artisan ? ».</h2>
+
+  <ol>
+    <li>
+      Utiliser le menu :
+      <ol>
+        <li>Choisir la catégorie d’artisanat dans le menu.</li>
+        <li>Choisir un artisan.</li>
+      </ol>
+    </li>
+    <li>
+      Utiliser la barre de recherche :
+      <ol>
+        <li>
+          Entrez toute ou partidu nom, de la spécialité ou de la ville de
+          l'artisan
+        </li>
+        <li>Cliquer sur le bouton "RECHERCHER</li>
+      </ol>
+    </li>
+  </ol>
+
+  <h2 class="text_titre">«Comment contacter un artisan ? »</h2>
+  <div class="px-4 container">
+    <ol>
+      <li>
+        sur chaque vignette ou fiche d'un artisant cliquer sur le bouton
+        "CONTACTER
+      </li>
+      <li>Via le formulaire de contact, envoyer votre message</li>
+      <li>Une réponse sera apportée sous 48h.</li>
+    </ol>
+  </div>
+
+  <h2 class="text_titre">«Les artisans du mois : »</h2>
+
+  <div class="container">
+    <div class="row">
+      @for(artisan of artisans|sortByTop; track artisan.id) {
+      <div class="col-md-4">
+        <div [routerLink]="['/artisans', artisan.id]" class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-10 m-auto">
+              <div class="b3 m-auto col-md-12 card-body">
+                <div class="card-header mb-3">
+                  <b>{{ artisan.name }}</b>
+                </div>
+                <div class="container">
+                  <div class="row">
+                    <div>
+                      <div class="col-9"><app-note /></div>
+                    </div>
+                  </div>
+                  <p class="card-text mt-3">
+                    Spécialité : {{ artisan.category }}
+                  </p>
+                  <p class="card-text mb-3">
+                    Localisation : {{ artisan.location }}
+                  </p>
+                </div>
+                <div class="m-auto col-9">
+                  <div class="btn bt_color">CONTACTER</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

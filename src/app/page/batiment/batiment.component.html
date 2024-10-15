@@ -1,0 +1,54 @@
+<div class="text_titre mb-5">
+  <div class="container justify-content-center">
+    <h1>Les artisans du bâtiment</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    @for(artisan of artisans|sortByCategory: searchTerm; track artisan.id) {
+    <div class="col-md-4">
+      <div [routerLink]="['/artisans', artisan.id]" class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-10 m-auto">
+            <div class="b3 m-auto col-md-12 card-body">
+              <div class="card-header">
+                <b>{{ artisan.name }}</b>
+              </div>
+              <div class="card-body">
+                <div class="bnote">
+                  <div class="row">
+                    <div class="col-8">
+                      <div class="box_note">
+                        <div class="note" appNote="artisan.note"></div>
+                        <div class="nonote"></div>
+                        <div class="box_star">
+                          <img class="etoile" src="A0.png" />
+                          <img class="etoile" src="A0.png" />
+                          <img class="etoile" src="A0.png" />
+                          <img class="etoile" src="A0.png" />
+                          <img class="etoile" src="A0.png" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-2">{{ artisan.note }}</div>
+                  </div>
+                </div>
+                <p class="card-text">Spécialité : {{ artisan.category }}</p>
+                <p class="card-text">Localisation : {{ artisan.location }}</p>
+              </div>
+              <div class="m-auto col-9">
+                <div class="btn bt_color">CONTACTER</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>
+
+<div routerLink="" class="m-auto col-2 mb-5">
+  <button class="btn btn-primary">Retour à l'accueil</button>
+</div>

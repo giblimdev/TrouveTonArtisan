@@ -1,0 +1,52 @@
+<div class="b1 container p-3 bg-form text-Light">
+  <div>
+    <h3>Formulaire de contacter</h3>
+    <p>envoyer un e-mail à l’artisan.</p>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Nom</label>
+      <input
+        type="text"
+        formControlName="name"
+        class="form-control"
+        id="name"
+        placeholder="Votre nom"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        formControlName="email"
+        class="form-control"
+        id="email"
+        placeholder="Votre email"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="objet" class="form-label">Objet</label>
+      <input
+        type="text"
+        formControlName="objet"
+        class="form-control"
+        id="objet"
+        placeholder="Objet"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="message" class="form-label">Message</label>
+      <textarea
+        formControlName="message"
+        class="form-control"
+        id="message"
+        rows="3"
+        placeholder="Votre message"
+      ></textarea>
+    </div>
+    <!--
+    <pre>{{ form.value | json }}</pre>-->
+
+    <button type="submit" class="btn btn-primary">Envoyer</button>
+  </form>
+</div>
